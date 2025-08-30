@@ -1,0 +1,223 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Management</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #e0f7fa 0%, #e3f2fd 100%);
+    }
+
+    header {
+      background: linear-gradient(135deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      padding: 24px 40px 18px 40px;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+
+    nav {
+      background: #fff;
+      padding: 14px 40px;
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.04);
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: 600;
+      font-size: 1.08em;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3f2fd;
+      color: #00c853;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 40px auto 0 auto;
+      padding: 32px 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(33,150,243,0.10);
+    }
+
+    h2 {
+      color: #1976d2;
+      margin-top: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid #e0e0e0;
+      padding: 10px 8px;
+      text-align: left;
+      font-size: 1em;
+    }
+
+    th {
+      background-color: #e3f2fd;
+      color: #1976d2;
+      font-weight: 600;
+    }
+
+    button {
+      padding: 8px 18px;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      font-size: 1em;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+      margin-right: 5px;
+    }
+    button:hover:enabled {
+      background: linear-gradient(90deg, #2196f3 0%, #00c853 100%);
+      box-shadow: 0 4px 16px rgba(33,150,243,0.13);
+    }
+    button:disabled {
+      background: #ccc;
+      color: #888;
+      cursor: not-allowed;
+    }
+
+    .add-user {
+      margin-top: 20px;
+      padding: 24px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+    }
+
+    .add-user input, .add-user select {
+      margin-top: 10px;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #bdbdbd;
+      border-radius: 7px;
+      font-size: 1em;
+      background: #f5fafd;
+      transition: border 0.2s;
+    }
+    .add-user input:focus, .add-user select:focus {
+      border: 1.5px solid #1976d2;
+      outline: none;
+    }
+
+    .add-user label {
+      margin-top: 15px;
+      display: block;
+      font-weight: bold;
+    }
+
+    .add-user button {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  👥 User Management
+</header>
+
+<nav>
+  <a href="index.html">Login</a>
+  <a href="page22.html">Dashboard</a>
+  <a href="page9.html">Products</a>
+  <a href="page8.html">Reports</a>
+  <a href="page10.html">Users</a>
+</nav>
+
+<div class="container">
+  <h2>Manage Users</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>RUCHA GANDHI</td>
+        <td>ruchagandhi06@gmail.com</td>
+        <td>Admin</td>
+        <td>
+          <button>Edit</button>
+          <button>Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td>ZEEL BANSAL</td>
+        <td>zeelbansal1811@gmail.com</td>
+        <td>Viewer</td>
+        <td>
+          <button>Edit</button>
+          <button>Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td>KINJAL SHAH</td>
+        <td>kinjalshah1111@gmail.com</td>
+        <td>Analyst</td>
+        <td>
+          <button>Edit</button>
+          <button>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="add-user">
+    <h3>Add New User</h3>
+    <label>Name:</label>
+    <input type="text" placeholder="Full Name">
+
+    <label>Email:</label>
+    <input type="email" placeholder="user@example.com">
+
+    <label>Role:</label>
+    <select>
+      <option>Admin</option>
+      <option>Viewer</option>
+      <option>Analyst</option>
+    </select>
+
+    <button>Add User</button>
+  </div>
+</div>
+
+</body>
+</html>

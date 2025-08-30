@@ -1,0 +1,218 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Catalog</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #e0f7fa 0%, #e3f2fd 100%);
+    }
+
+    header {
+      background: linear-gradient(135deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      padding: 24px 40px 18px 40px;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+
+    nav {
+      background: #fff;
+      padding: 14px 40px;
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.04);
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: 600;
+      font-size: 1.08em;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3f2fd;
+      color: #00c853;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      padding: 32px 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(33,150,243,0.10);
+    }
+
+    h2 {
+      color: #1976d2;
+    }
+
+    .search-bar {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .search-bar input, .search-bar select {
+      padding: 10px;
+      border-radius: 7px;
+      border: 1px solid #bdbdbd;
+      font-size: 1em;
+      background: #f5fafd;
+      transition: border 0.2s;
+    }
+    .search-bar input:focus, .search-bar select:focus {
+      border: 1.5px solid #1976d2;
+      outline: none;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .product-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+      padding: 18px 12px 20px 12px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .product-card:hover {
+      box-shadow: 0 6px 24px rgba(33,150,243,0.13);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #fff;
+      margin-bottom: 10px;
+    }
+
+    .product-name {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin: 10px 0 5px;
+      color: #1976d2;
+    }
+
+    .product-price {
+      color: #00c853;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .availability {
+      font-size: 0.95em;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .product-card button {
+      padding: 10px 18px;
+      background: linear-gradient(90deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .product-card button:hover:enabled {
+      background: linear-gradient(90deg, #2196f3 0%, #00c853 100%);
+      box-shadow: 0 4px 16px rgba(33,150,243,0.13);
+    }
+    .product-card button:disabled {
+      background: #ccc;
+      color: #888;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  🛍️ Product Catalog
+</header>
+
+<nav>
+  <a href="index.html">Login</a>
+  <a href="page22.html">Dashboard</a>
+  <a href="page3.html">Order Info</a>
+  <a href="page8.html">Reports</a>
+  <a href="page9.html">Product Catalog</a>
+</nav>
+
+<div class="container">
+  <h2>Available Products</h2>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search product name...">
+    <select>
+      <option>All Categories</option>
+      <option>Electronics</option>
+      <option>Furniture</option>
+      <option>Stationery</option>
+    </select>
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150" alt="Laptop">
+      <div class="product-name">Lenovo Laptop</div>
+      <div class="product-price">₹55,000</div>
+      <div class="availability">In Stock</div>
+      <button>Add to Order</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150" alt="Monitor">
+      <div class="product-name">Dell Monitor</div>
+      <div class="product-price">₹12,500</div>
+      <div class="availability">In Stock</div>
+      <button>Add to Order</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150" alt="Office Chair">
+      <div class="product-name">Ergonomic Chair</div>
+      <div class="product-price">₹7,800</div>
+      <div class="availability">Limited Stock</div>
+      <button>Add to Order</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150" alt="Notebook">
+      <div class="product-name">Notebook Pack</div>
+      <div class="product-price">₹450</div>
+      <div class="availability">Out of Stock</div>
+      <button disabled>Add to Order</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

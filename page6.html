@@ -1,0 +1,213 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Report Selection Settings</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #e0f7fa 0%, #e3f2fd 100%);
+    }
+
+    header {
+      background: linear-gradient(135deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      padding: 24px 40px 18px 40px;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+
+    nav {
+      background: #fff;
+      padding: 14px 40px;
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.04);
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: 600;
+      font-size: 1.08em;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3f2fd;
+      color: #00c853;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 40px auto 0 auto;
+      padding: 32px 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(33,150,243,0.10);
+    }
+
+    section {
+      background: #f9f9f9;
+      padding: 24px 20px;
+      margin-bottom: 28px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+      transition: box-shadow 0.2s;
+    }
+    section:hover {
+      box-shadow: 0 6px 24px rgba(33,150,243,0.13);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #1976d2;
+      font-size: 1.25em;
+      font-weight: 600;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: 1px solid #bdbdbd;
+      border-radius: 7px;
+      font-size: 1em;
+      background: #f5fafd;
+      transition: border 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border: 1.5px solid #1976d2;
+      outline: none;
+    }
+
+    .checkbox-group label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 1.08em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #00c853 100%);
+      box-shadow: 0 4px 16px rgba(33,150,243,0.13);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    📊 Report Selection Settings
+  </header>
+
+  <nav>
+    <a href="index.html">Login</a>
+    <a href="page22.html">Dashboard</a>
+    <a href="page3.html">Order Info</a>
+    <a href="page5.html">Custom Settings</a>
+    <a href="page6.html">Report Selection</a>
+  </nav>
+
+  <div class="container">
+
+    <section>
+      <h2>📊 Choose Your Report Types</h2>
+      <div class="checkbox-group">
+        <label><input type="checkbox"> Sales Summary</label>
+        <label><input type="checkbox"> Order Status</label>
+        <label><input type="checkbox"> Inventory Report</label>
+        <label><input type="checkbox"> Customer Retention</label>
+        <label><input type="checkbox"> Website Traffic</label>
+      </div>
+    </section>
+
+    <section>
+      <h2>🔗 Data Source</h2>
+      <label for="source">Select Data Source:</label>
+      <select id="source">
+        <option>Salesforce CRM</option>
+        <option>Google Sheets</option>
+        <option>CSV Upload</option>
+        <option>Internal API</option>
+      </select>
+      <label>Or Upload CSV:</label>
+      <input type="file">
+    </section>
+
+    <section>
+      <h2>📆 Time Range Filter</h2>
+      <label>Select Time Range:</label>
+      <select>
+        <option>Last 7 Days</option>
+        <option>This Month</option>
+        <option>Last 3 Months</option>
+        <option>Custom</option>
+      </select>
+    </section>
+
+    <section>
+      <h2>📐 Visualization Options</h2>
+      <label>Select Chart Type:</label>
+      <select>
+        <option>Bar Chart</option>
+        <option>Line Graph</option>
+        <option>Pie Chart</option>
+        <option>Donut Chart</option>
+        <option>Table View</option>
+      </select>
+      <label><input type="checkbox"> Show Data Table Below Chart</label>
+      <label><input type="checkbox"> Highlight Trends</label>
+    </section>
+
+    <section>
+      <h2>📅 Report Scheduling</h2>
+      <label>Schedule Report:</label>
+      <select>
+        <option>None</option>
+        <option>Daily</option>
+        <option>Weekly</option>
+        <option>Monthly</option>
+      </select>
+      <label>Send to Emails (comma separated):</label>
+      <input type="text" placeholder="example@company.com">
+    </section>
+
+    <section>
+      <h2>💾 Save Report Preset</h2>
+      <label>Preset Name:</label>
+      <input type="text" placeholder="e.g. Monthly Sales Overview">
+      <button>Save Settings</button>
+    </section>
+
+  </div>
+
+</body>
+</html>

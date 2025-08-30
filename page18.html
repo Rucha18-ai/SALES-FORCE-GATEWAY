@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analytics Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #e0f7fa 0%, #e3f2fd 100%);
+    }
+
+    header {
+      background: linear-gradient(135deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      padding: 24px 40px 18px 40px;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+
+    nav {
+      background: #fff;
+      padding: 14px 40px;
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.04);
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: 600;
+      font-size: 1.08em;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3f2fd;
+      color: #00c853;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      padding: 32px 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(33,150,243,0.10);
+    }
+
+    h2 {
+      color: #1976d2;
+      margin-bottom: 20px;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+      padding: 20px;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 6px 24px rgba(33,150,243,0.13);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: #1976d2;
+    }
+
+    .card p {
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .chart-placeholder {
+      background-color: #e0e0e0;
+      height: 120px;
+      margin-top: 10px;
+      border-radius: 8px;
+      text-align: center;
+      line-height: 120px;
+      color: #555;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  📊 Analytics Dashboard
+</header>
+
+<nav>
+  <a href="index.html">Login</a>
+  <a href="page22.html">Dashboard</a>
+  <a href="page6.html">Reports</a>
+  <a href="page13.html">Templates</a>
+  <a href="page18.html">Analytics</a>
+</nav>
+
+<div class="container">
+  <h2>Key Insights</h2>
+
+  <div class="dashboard">
+    <div class="card">
+      <h3>Total Sales</h3>
+      <p>₹1,23,000</p>
+      <div class="chart-placeholder">[Bar Chart]</div>
+    </div>
+
+    <div class="card">
+      <h3>Top Performing Product</h3>
+      <p>Product X</p>
+      <div class="chart-placeholder">[Pie Chart]</div>
+    </div>
+
+    <div class="card">
+      <h3>Customer Growth</h3>
+      <p>+12.5% this month</p>
+      <div class="chart-placeholder">[Line Chart]</div>
+    </div>
+
+    <div class="card">
+      <h3>Order Status</h3>
+      <p>78% Delivered</p>
+      <div class="chart-placeholder">[Progress Chart]</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

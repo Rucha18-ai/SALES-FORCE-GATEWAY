@@ -1,0 +1,237 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order & Info Hub</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #e0f7fa 0%, #e3f2fd 100%);
+    }
+
+    header {
+      background: linear-gradient(135deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      padding: 24px 40px 18px 40px;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+
+    nav {
+      background: #fff;
+      padding: 14px 40px;
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.04);
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: 600;
+      font-size: 1.08em;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3f2fd;
+      color: #00c853;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      padding: 32px 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(33,150,243,0.10);
+    }
+
+    section {
+      background: #f9f9f9;
+      padding: 24px 20px;
+      margin-bottom: 28px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+      transition: box-shadow 0.2s;
+    }
+    section:hover {
+      box-shadow: 0 6px 24px rgba(33,150,243,0.13);
+    }
+
+    section h2 {
+      margin-top: 0;
+      color: #1976d2;
+      font-size: 1.25em;
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #e0e0e0;
+      padding: 10px 8px;
+      font-size: 1em;
+    }
+
+    th {
+      background-color: #e3f2fd;
+      color: #1976d2;
+      font-weight: 600;
+    }
+
+    .feedback-form input,
+    .feedback-form textarea,
+    .feedback-form select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #bdbdbd;
+      border-radius: 7px;
+      font-size: 1em;
+      background: #f5fafd;
+      transition: border 0.2s;
+    }
+    .feedback-form input:focus, .feedback-form textarea:focus, .feedback-form select:focus {
+      border: 1.5px solid #1976d2;
+      outline: none;
+    }
+
+    .feedback-form button {
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 1.08em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .feedback-form button:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #00c853 100%);
+      box-shadow: 0 4px 16px rgba(33,150,243,0.13);
+    }
+
+    .status-badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    .delivered { background-color: green; }
+    .in-transit { background-color: orange; }
+    .shipped { background-color: blue; }
+    .cancelled { background-color: red; }
+  </style>
+</head>
+<body>
+
+  <header>
+    🚀 Salesforce Order & Information Hub
+  </header>
+
+  <nav>
+    <a href="index.html">Login</a>
+    <a href="page22.html">Dashboard</a>
+    <a href="page3.html">Order & Info</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- Order Confirmation -->
+    <section>
+      <h2>✅ Order Confirmation</h2>
+      <p>Your last order <strong>#ORD12345</strong> was successfully placed on <strong>July 1, 2025</strong>.</p>
+    </section>
+
+    <!-- Product List -->
+    <section>
+      <h2>📋 Product List</h2>
+      <table>
+        <tr>
+          <th>Product ID</th><th>Name</th><th>Price</th><th>Stock</th>
+        </tr>
+        <tr><td>101</td><td>Cloud CRM</td><td>$299</td><td>In Stock</td></tr>
+        <tr><td>102</td><td>Analytics Module</td><td>$499</td><td>In Stock</td></tr>
+        <tr><td>103</td><td>AI Assistant</td><td>$699</td><td>Limited</td></tr>
+        <tr><td>104</td><td>Automation Bot</td><td>$399</td><td>Out of Stock</td></tr>
+      </table>
+    </section>
+
+    <!-- About Company -->
+    <section>
+      <h2>🏢 About the Company</h2>
+      <p>We are a leading cloud technology company specializing in CRM, sales automation, and enterprise AI solutions. Our mission is to empower businesses with modern, efficient tools to build stronger customer relationships.</p>
+    </section>
+
+    <!-- Order Status -->
+    <section>
+      <h2>📦 Order Status</h2>
+      <table>
+        <tr>
+          <th>Order ID</th><th>Status</th><th>Expected Delivery</th>
+        </tr>
+        <tr>
+          <td>#ORD12345</td>
+          <td><span class="status-badge shipped">Shipped</span></td>
+          <td>July 4, 2025</td>
+        </tr>
+        <tr>
+          <td>#ORD12344</td>
+          <td><span class="status-badge delivered">Delivered</span></td>
+          <td>June 29, 2025</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Delivery Tracking -->
+    <section>
+      <h2>🚚 Delivery Tracking</h2>
+      <p>Order <strong>#ORD12345</strong> is currently <span class="status-badge in-transit">In Transit</span>. Estimated delivery: <strong>July 4, 2025</strong>.</p>
+    </section>
+
+    <!-- Feedback Form -->
+    <section>
+      <h2>📝 Feedback Form</h2>
+      <form class="feedback-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="rating">Your Rating</label>
+        <select id="rating">
+          <option value="5">⭐️⭐️⭐️⭐️⭐️ Excellent</option>
+          <option value="4">⭐️⭐️⭐️⭐️ Good</option>
+          <option value="3">⭐️⭐️⭐️ Average</option>
+          <option value="2">⭐️⭐️ Poor</option>
+        </select>
+
+        <label for="comments">Your Comments</label>
+        <textarea id="comments" rows="4" placeholder="Write something..."></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+
+  </div>
+
+</body>
+</html>

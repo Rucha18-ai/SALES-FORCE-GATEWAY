@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Salesforce Gateway</title>
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0070d2, #00c6ff);
+  }
+  .container {
+    background: #fff;
+    width: 360px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #0070d2;
+    margin-bottom: 10px;
+  }
+  .subtitle {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  input {
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+  }
+  input:focus {
+    border-color: #0070d2;
+    box-shadow: 0 0 5px rgba(0,112,210,0.5);
+  }
+  button {
+    padding: 12px;
+    font-size: 1em;
+    background: #0070d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #005bb5;
+  }
+  .toggle {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #0070d2;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Salesforce Heading -->
+  <div class="logo">Salesforce Gateway</div>
+  <div class="subtitle">Secure Cloud Access Portal</div>
+
+  <!-- Login Form -->
+  <div id="loginBox">
+    <form id="loginForm">
+      <input type="text" id="loginUsername" placeholder="Username" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <div class="toggle" onclick="toggleForms()">Don’t have an account? Sign Up</div>
+    </form>
+  </div>
+
+  <!-- Signup Form -->
+  <div id="signupBox" style="display:none;">
+    <form id="signupForm">
+      <input type="text" id="signupEmail" placeholder="Email ID" required>
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      <input type="password" id="signupConfirmPassword" placeholder="Confirm Password" required>
+      <button type="submit">Sign Up</button>
+      <div class="toggle" onclick="toggleForms()">← Back to Login</div>
+    </form>
+  </div>
+
+</div>
+
+<script>
+  function toggleForms() {
+    document.getElementById("loginBox").style.display =
+      document.getElementById("loginBox").style.display === "none" ? "block" : "none";
+    document.getElementById("signupBox").style.display =
+      document.getElementById("signupBox").style.display === "none" ? "block" : "none";
+  }
+
+  // Login
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("action", "login");
+    formData.append("username", document.getElementById("loginUsername").value);
+    formData.append("password", document.getElementById("loginPassword").value);
+
+    fetch("data.php", { method: "POST", body: formData })
+      .then(res => res.json())
+      .then(response => {
+        alert(response.message);
+        if (response.status === "success") window.location.href = "welcome.html";
+      });
+  });
+
+  // Signup
+  document.getElementById("signupForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const email = document.getElementById("signupEmail").value;
+    const password = document.getElementById("signupPassword").value;
+    const confirmPassword = document.getElementById("signupConfirmPassword").value;
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("action", "signup");
+    formData.append("email", email);
+    formData.append("password", password);
+
+    fetch("data.php", { method: "POST", body: formData })
+      .then(res => res.json())
+      .then(response => {
+        alert(response.message);
+        if (response.status === "success") toggleForms();
+      });
+  });
+</script>
+</body>
+</html>

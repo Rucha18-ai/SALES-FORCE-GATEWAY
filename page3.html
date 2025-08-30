@@ -1,0 +1,209 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order & Info Hub</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #e0f7fa 0%, #e3f2fd 100%);
+    }
+
+    header {
+      background: linear-gradient(135deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      padding: 24px 40px 18px 40px;
+      font-size: 1.6em;
+      letter-spacing: 1px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+
+    nav {
+      background: #fff;
+      padding: 14px 40px;
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.04);
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: 600;
+      font-size: 1.08em;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3f2fd;
+      color: #00c853;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      padding: 32px 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(33,150,243,0.10);
+    }
+
+    section {
+      background: #f9f9f9;
+      padding: 24px 20px;
+      margin-bottom: 28px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+      transition: box-shadow 0.2s;
+    }
+    section:hover {
+      box-shadow: 0 6px 24px rgba(33,150,243,0.13);
+    }
+
+    section h2 {
+      margin-top: 0;
+      color: #1976d2;
+      font-size: 1.25em;
+      font-weight: 600;
+    }
+
+    .products-table, .status-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .products-table th, .products-table td,
+    .status-table th, .status-table td {
+      border: 1px solid #e0e0e0;
+      padding: 10px 8px;
+      font-size: 1em;
+    }
+
+    .products-table th, .status-table th {
+      background-color: #e3f2fd;
+      color: #1976d2;
+      font-weight: 600;
+    }
+
+    .feedback-form input, .feedback-form textarea, .feedback-form select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #bdbdbd;
+      border-radius: 7px;
+      font-size: 1em;
+      background: #f5fafd;
+      transition: border 0.2s;
+    }
+    .feedback-form input:focus, .feedback-form textarea:focus, .feedback-form select:focus {
+      border: 1.5px solid #1976d2;
+      outline: none;
+    }
+
+    .feedback-form button {
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 1.08em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .feedback-form button:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #00c853 100%);
+      box-shadow: 0 4px 16px rgba(33,150,243,0.13);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Salesforce Order & Information Hub
+  </header>
+
+  <nav>
+    <a href="index.html">Login</a>
+    <a href="page22.html">Dashboard</a>
+    <a href="page3.html">Order & Info</a>
+  </nav>
+
+  <div class="container">
+
+    <section>
+      <h2>✅ Order Confirmation</h2>
+      <p>Your last order <strong>#ORD12345</strong> has been confirmed on <strong>July 1, 2025</strong>.</p>
+    </section>
+
+    <section>
+      <h2>📋 Product List</h2>
+      <table class="products-table">
+        <tr>
+          <th>Product ID</th><th>Name</th><th>Price</th><th>Stock</th>
+        </tr>
+        <tr><td>101</td><td>Cloud Storage</td><td>$200</td><td>In Stock</td></tr>
+        <tr><td>102</td><td>Analytics Module</td><td>$300</td><td>Limited</td></tr>
+        <tr><td>103</td><td>CRM Plugin</td><td>$150</td><td>Out of Stock</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>🏢 About Company</h2>
+      <p>We are a leading provider of cloud-based CRM and analytics tools that help companies grow and engage with their customers more efficiently.</p>
+    </section>
+
+    <section>
+      <h2>📦 Order Status</h2>
+      <table class="status-table">
+        <tr>
+          <th>Order ID</th><th>Status</th><th>Expected Delivery</th>
+        </tr>
+        <tr><td>#ORD12345</td><td>Shipped</td><td>July 4, 2025</td></tr>
+        <tr><td>#ORD12344</td><td>Delivered</td><td>June 29, 2025</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>🚚 Delivery Tracking</h2>
+      <p>Current status of <strong>#ORD12345</strong>: <em>📦 In Transit</em></p>
+    </section>
+
+    <section>
+      <h2>📝 Feedback Form</h2>
+      <form class="feedback-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your Name">
+
+        <label for="rating">Rating</label>
+        <select id="rating">
+          <option>⭐️⭐️⭐️⭐️⭐️ Excellent</option>
+          <option>⭐️⭐️⭐️⭐️ Good</option>
+          <option>⭐️⭐️⭐️ Average</option>
+          <option>⭐️⭐️ Poor</option>
+        </select>
+
+        <label for="comments">Comments</label>
+        <textarea id="comments" rows="4" placeholder="Your feedback..."></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+
+  </div>
+
+</body>
+</html>

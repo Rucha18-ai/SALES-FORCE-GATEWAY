@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salesforce Gateway Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #1a73e8, #43a047);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 3rem 2rem;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #ffffff, #f0f4ff);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      transition: 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+      transform: rotate(25deg);
+      pointer-events: none;
+      transition: 0.5s;
+    }
+
+    .card:hover::before {
+      left: 100%;
+      top: 100%;
+    }
+
+    .card i {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+      color: #1a73e8;
+    }
+
+    .card span {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      background-color: #eaf4ff;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .card {
+        padding: 1.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Salesforce Gateway</h1>
+  <p>Your all-in-one performance and management center</p>
+</header>
+
+<main class="dashboard">
+
+  <!-- Prioritized Important Tools -->
+  <a href="page5.html" class="card"><i class="fas fa-sliders-h"></i><span>Custom Dashboard</span></a>
+  <a href="page18.html" class="card"><i class="fas fa-chart-line"></i><span>Analytics Board</span></a>
+  <a href="page18.html" class="card"><i class="fas fa-lightbulb"></i><span>Key Insights</span></a>
+
+  <!-- Reporting Tools -->
+  <a href="page6.html" class="card"><i class="fas fa-filter"></i><span>Report Selection</span></a>
+  <a href="page13.html" class="card"><i class="fas fa-file-alt"></i><span>Report Templates</span></a>
+  <a href="page8.html" class="card"><i class="fas fa-eye"></i><span>Report Review</span></a>
+  <a href="page7.html" class="card"><i class="fas fa-globe"></i><span>Public Reports</span></a>
+
+  <!-- Product Section -->
+  <a href="page4.html" class="card"><i class="fas fa-box"></i><span>Product List</span></a>
+  <a href="page9.html" class="card"><i class="fas fa-store"></i><span>Product Catalog</span></a>
+  <a href="page20.html" class="card"><i class="fas fa-balance-scale"></i><span>Compare Products</span></a>
+  <a href="page14.html" class="card"><i class="fas fa-truck"></i><span>Order Tracking</span></a>
+
+  <!-- Info + User Management -->
+  <a href="page3.html" class="card"><i class="fas fa-info-circle"></i><span>Information Hub</span></a>
+  <a href="page10.html" class="card"><i class="fas fa-users-cog"></i><span>Manage Users</span></a>
+  <a href="page12.html" class="card"><i class="fas fa-user-clock"></i><span>User Activity Logs</span></a>
+  <a href="page19.html" class="card"><i class="fas fa-bell"></i><span>Admin Notifications</span></a>
+
+  <!-- Support + Settings -->
+  <a href="page11.html" class="card"><i class="fas fa-headset"></i><span>Feedback & Support</span></a>
+  <a href="page15.html" class="card"><i class="fas fa-paint-brush"></i><span>Customize Dashboard</span></a>
+  <a href="page17.html" class="card"><i class="fas fa-question-circle"></i><span>FAQs</span></a>
+  <a href="page21.html" class="card"><i class="fas fa-compass"></i><span>Explore Pages</span></a>
+
+</main>
+
+</body>
+</html>

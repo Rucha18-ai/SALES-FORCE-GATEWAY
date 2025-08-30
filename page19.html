@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Notifications</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #e0f7fa 0%, #e3f2fd 100%);
+    }
+
+    header {
+      background: linear-gradient(135deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      padding: 24px 40px 18px 40px;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+
+    nav {
+      background: #fff;
+      padding: 14px 40px;
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.04);
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: 600;
+      font-size: 1.08em;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3f2fd;
+      color: #00c853;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      padding: 32px 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(33,150,243,0.10);
+    }
+
+    h2 {
+      color: #1976d2;
+      margin-bottom: 20px;
+    }
+
+    .notification {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+      margin-bottom: 15px;
+      transition: box-shadow 0.2s;
+    }
+    .notification:hover {
+      box-shadow: 0 6px 24px rgba(33,150,243,0.13);
+    }
+
+    .notification h3 {
+      margin: 0;
+      color: #1976d2;
+    }
+
+    .notification p {
+      margin: 5px 0 0;
+      color: #333;
+    }
+
+    .notification time {
+      font-size: 0.85em;
+      color: #888;
+    }
+
+    .clear-btn {
+      margin-top: 20px;
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 1.08em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .clear-btn:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #00c853 100%);
+      box-shadow: 0 4px 16px rgba(33,150,243,0.13);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  🔔 Admin Notifications
+</header>
+
+<nav>
+  <a href="index.html">Login</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="user-management.html">Users</a>
+  <a href="analytics.html">Analytics</a>
+  <a href="admin-notifications.html">Notifications</a>
+</nav>
+
+<div class="container">
+  <h2>Recent Alerts</h2>
+
+  <div class="notification">
+    <h3>⚠️ Low Stock Alert</h3>
+    <p>Product Y inventory is below threshold (10 units remaining).</p>
+    <time>2 minutes ago</time>
+  </div>
+
+  <div class="notification">
+    <h3>✅ Report Generated</h3>
+    <p>Weekly Sales Report is ready for download.</p>
+    <time>15 minutes ago</time>
+  </div>
+
+  <div class="notification">
+    <h3>📩 New Feedback Received</h3>
+    <p>Customer has submitted feedback on recent order.</p>
+    <time>Today at 10:30 AM</time>
+  </div>
+
+  <div class="notification">
+    <h3>🔄 Sync Completed</h3>
+    <p>Inventory sync with vendor database finished successfully.</p>
+    <time>Yesterday at 6:15 PM</time>
+  </div>
+
+  <button class="clear-btn">Clear All Notifications</button>
+</div>
+
+</body>
+</html>

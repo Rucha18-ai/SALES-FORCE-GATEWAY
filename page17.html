@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Help Center - Multilingual</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(120deg, #f0f8ff, #e3f2fd);
+    }
+    header {
+      background: linear-gradient(135deg, #00c853, #2196f3);
+      color: white;
+      padding: 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: center;
+    }
+    #language-select {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    .faq-item {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      color: #444;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 999;
+    }
+    .slider {
+      margin: 30px auto;
+      max-width: 600px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .slide {
+      display: none;
+      background: #e1f5fe;
+      padding: 20px;
+      text-align: center;
+    }
+    .slide.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header id="title">🛟 Help Center</header>
+  <select id="language-select">
+    <option value="en">English</option>
+    <option value="hi">हिन्दी</option>
+    <option value="gu">ગુજરાતી</option>
+  </select>
+
+  <div class="container">
+    <div class="slider">
+      <div class="slide active" id="slide1"></div>
+      <div class="slide" id="slide2"></div>
+    </div>
+
+    <div class="faq-item" onclick="toggleAnswer(this)">
+      <div class="faq-question" id="faq1q"></div>
+      <div class="faq-answer" id="faq1a"></div>
+    </div>
+    <div class="faq-item" onclick="toggleAnswer(this)">
+      <div class="faq-question" id="faq2q"></div>
+      <div class="faq-answer" id="faq2a"></div>
+    </div>
+
+    <button onclick="showPopup()" style="margin-top: 20px;">Contact</button>
+  </div>
+
+  <div class="overlay" id="overlay" onclick="hidePopup()"></div>
+  <div class="popup" id="popup">
+    <p id="popupText"></p>
+    <button onclick="hidePopup()">OK</button>
+  </div>
+
+  <script>
+    const content = {
+      en: {
+        title: "🛟 Help Center",
+        faq1q: "How do I reset my password?",
+        faq1a: "Click on 'Forgot Password' at the login page.",
+        faq2q: "How to contact support?",
+        faq2a: "Click the Contact button to get help.",
+        popupText: "Contact us at support@example.com",
+        slide1: "Tip: Use strong passwords!",
+        slide2: "New: Reports available in dashboard."
+      },
+      hi: {
+        title: "🛟 सहायता केंद्र",
+        faq1q: "मैं पासवर्ड कैसे रीसेट करूँ?",
+        faq1a: "लॉगिन पेज पर 'पासवर्ड भूल गए' पर क्लिक करें।",
+        faq2q: "सहायता से कैसे संपर्क करें?",
+        faq2a: "संपर्क बटन पर क्लिक करें।",
+        popupText: "हमें support@example.com पर संपर्क करें",
+        slide1: "टिप: मजबूत पासवर्ड का उपयोग करें!",
+        slide2: "नई सुविधा: रिपोर्ट डैशबोर्ड में उपलब्ध हैं।"
+      },
+      gu: {
+        title: "🛟 સહાય કેન્દ્ર",
+        faq1q: "હું પાસવર્ડ કેવી રીતે રીસેટ કરું?",
+        faq1a: "લોગિન પેજ પર 'પાસવર્ડ ભૂલી ગયા' ક્લિક કરો.",
+        faq2q: "સહાય માટે કેવી રીતે સંપર્ક કરવો?",
+        faq2a: "સંપર્ક બટન પર ક્લિક કરો.",
+        popupText: "અમારો સંપર્ક કરો: support@example.com",
+        slide1: "ટિપ: મજબૂત પાસવર્ડ વાપરો!",
+        slide2: "નવું: ડેશબોર્ડમાં રિપોર્ટ ઉપલબ્ધ છે."
+      }
+    };
+
+    function updateLanguage(lang) {
+      document.getElementById("title").innerText = content[lang].title;
+      document.getElementById("faq1q").innerText = content[lang].faq1q;
+      document.getElementById("faq1a").innerText = content[lang].faq1a;
+      document.getElementById("faq2q").innerText = content[lang].faq2q;
+      document.getElementById("faq2a").innerText = content[lang].faq2a;
+      document.getElementById("popupText").innerText = content[lang].popupText;
+      document.getElementById("slide1").innerText = content[lang].slide1;
+      document.getElementById("slide2").innerText = content[lang].slide2;
+    }
+
+    document.getElementById("language-select").addEventListener("change", function() {
+      updateLanguage(this.value);
+    });
+
+    function toggleAnswer(item) {
+      const answer = item.querySelector(".faq-answer");
+      answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+
+    function showPopup() {
+      document.getElementById("overlay").style.display = "block";
+      document.getElementById("popup").style.display = "block";
+    }
+
+    function hidePopup() {
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("popup").style.display = "none";
+    }
+
+    // Slider logic
+    let currentSlide = 0;
+    setInterval(() => {
+      const slides = document.querySelectorAll(".slide");
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }, 4000);
+
+    // Default to English
+    updateLanguage("en");
+  </script>
+</body>
+</html>

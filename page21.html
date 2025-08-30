@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Salesforce Web Portal Home</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #b3e5fc 100%);
+    }
+
+    header {
+      background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+      color: white;
+      padding: 28px 40px 24px 40px;
+      font-size: 2.1em;
+      text-align: center;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      box-shadow: 0 4px 16px rgba(24,90,157,0.10);
+      letter-spacing: 1px;
+    }
+
+    nav {
+      background: rgba(255,255,255,0.85);
+      padding: 18px 40px 18px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 2px 8px rgba(67,206,162,0.08);
+      margin-bottom: 18px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #185a9d;
+      font-weight: 600;
+      padding: 10px 22px;
+      background: linear-gradient(90deg, #e0f7fa 0%, #b2ebf2 100%);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(67,206,162,0.10);
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+      font-size: 1.08em;
+      letter-spacing: 0.5px;
+    }
+
+    nav a:hover {
+      background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(24,90,157,0.13);
+    }
+
+    .container {
+      padding: 48px 24px 48px 24px;
+      max-width: 1200px;
+      margin: 36px auto 0 auto;
+      background: rgba(255,255,255,0.92);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(67,206,162,0.13);
+    }
+
+    h2 {
+      text-align: center;
+      color: #185a9d;
+      font-size: 2em;
+      margin-bottom: 32px;
+      letter-spacing: 0.5px;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      margin-top: 10px;
+    }
+
+    .page-card {
+      background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+      padding: 28px 18px 24px 18px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(24,90,157,0.10);
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: 1.5px solid #b2ebf2;
+    }
+
+    .page-card:hover {
+      transform: translateY(-6px) scale(1.025);
+      box-shadow: 0 8px 32px rgba(67,206,162,0.18);
+      border-color: #43cea2;
+    }
+
+    .page-card h3 {
+      margin: 10px 0 8px 0;
+      color: #1976d2;
+      font-size: 1.25em;
+      font-weight: 600;
+    }
+
+    .page-card p {
+      font-size: 1em;
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .page-card a {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 9px 20px;
+      background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 7px;
+      font-weight: 600;
+      font-size: 1em;
+      box-shadow: 0 2px 8px rgba(24,90,157,0.10);
+      transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+    }
+
+    .page-card a:hover {
+      background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+      color: #e0f7fa;
+      box-shadow: 0 4px 16px rgba(67,206,162,0.13);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  📂 Salesforce Web Portal Home
+</header>
+
+<nav>
+  <a href="login.html">Login</a>
+  <a href="page21.html">Dashboard</a>
+  <a href="page3.html">Order Info</a>
+  <a href="page4.html">Products</a>
+  <a href="page4.html">Tracking</a>
+  <a href="settings.html">Settings</a>
+  <a href="help-center.html">Help</a>
+  <a href="analytics.html">Analytics</a>
+  <a href="admin-notifications.html">Notifications</a>
+  <a href="product-comparison.html">Compare</a>
+</nav>
+
+<div class="container">
+  <h2>Explore Pages</h2>
+  <div class="page-grid">
+    <div class="page-card">
+      <h3>Login</h3>
+      <p>Secure login access to your Salesforce portal.</p>
+      <a href="login.html">Go to Login</a>
+    </div>
+    <div class="page-card">
+      <h3>Dashboard</h3>
+      <p>Overview of your reports, charts, and KPIs.</p>
+      <a href="dashboard.html">Go to Dashboard</a>
+    </div>
+    <div class="page-card">
+      <h3>Order Info</h3>
+      <p>Details about product orders and confirmations.</p>
+      <a href="order-info.html">View Orders</a>
+    </div>
+    <div class="page-card">
+      <h3>Product Catalog</h3>
+      <p>Browse all products with specifications.</p>
+      <a href="product-catalog.html">View Catalog</a>
+    </div>
+    <div class="page-card">
+      <h3>Tracking</h3>
+      <p>Track order delivery status in real time.</p>
+      <a href="order-tracking.html">Track Orders</a>
+    </div>
+    <div class="page-card">
+      <h3>Settings</h3>
+      <p>Manage your dashboard appearance and notifications.</p>
+      <a href="settings.html">Go to Settings</a>
+    </div>
+    <div class="page-card">
+      <h3>Help Center</h3>
+      <p>Find answers or contact support easily.</p>
+      <a href="help-center.html">Visit Help</a>
+    </div>
+    <div class="page-card">
+      <h3>Analytics</h3>
+      <p>Visual stats and insights for better decisions.</p>
+      <a href="analytics.html">View Analytics</a>
+    </div>
+    <div class="page-card">
+      <h3>Notifications</h3>
+      <p>Stay informed with live admin alerts.</p>
+      <a href="admin-notifications.html">View Alerts</a>
+    </div>
+    <div class="page-card">
+      <h3>Compare Products</h3>
+      <p>Analyze features and pricing side-by-side.</p>
+      <a href="product-comparison.html">Compare Now</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

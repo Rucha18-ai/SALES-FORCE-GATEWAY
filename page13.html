@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Report Templates</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #e0f7fa 0%, #e3f2fd 100%);
+    }
+
+    header {
+      background: linear-gradient(135deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      padding: 24px 40px 18px 40px;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+
+    nav {
+      background: #fff;
+      padding: 14px 40px;
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.04);
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: 600;
+      font-size: 1.08em;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3f2fd;
+      color: #00c853;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 40px auto 0 auto;
+      padding: 32px 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(33,150,243,0.10);
+    }
+
+    h2 {
+      color: #1976d2;
+      margin-top: 0;
+    }
+
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .template-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.2s;
+    }
+    .template-card:hover {
+      box-shadow: 0 6px 24px rgba(33,150,243,0.13);
+    }
+
+    .template-card h3 {
+      margin: 0 0 10px;
+      color: #1976d2;
+    }
+
+    .template-card p {
+      font-size: 0.98em;
+      color: #555;
+      flex-grow: 1;
+    }
+
+    .template-card button {
+      margin-top: 15px;
+      padding: 10px 18px;
+      background: linear-gradient(90deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .template-card button:hover:enabled {
+      background: linear-gradient(90deg, #2196f3 0%, #00c853 100%);
+      box-shadow: 0 4px 16px rgba(33,150,243,0.13);
+    }
+    .template-card button:disabled {
+      background: #ccc;
+      color: #888;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  🧾 Report Templates
+</header>
+
+<nav>
+  <a href="index.html">Login</a>
+  <a href="page22.html">Dashboard</a>
+  <a href="page8.html">Reports</a>
+  <a href="page12.html">Preview</a>
+  <a href="page13.html">Templates</a>
+</nav>
+
+<div class="container">
+  <h2>Available Report Templates</h2>
+
+  <div class="template-grid">
+    <div class="template-card">
+      <h3>Sales Report Template</h3>
+      <p>Summarizes monthly sales by region, product type, and revenue. Includes charts and KPI highlights.</p>
+      <button>Use Template</button>
+    </div>
+
+    <div class="template-card">
+      <h3>Inventory Overview</h3>
+      <p>Tracks available stock, restocking needs, and supplier performance. Great for warehouse teams.</p>
+      <button>Use Template</button>
+    </div>
+
+    <div class="template-card">
+      <h3>Customer Feedback Summary</h3>
+      <p>Consolidates responses from feedback forms with charts for sentiment analysis and satisfaction score.</p>
+      <button>Use Template</button>
+    </div>
+
+    <div class="template-card">
+      <h3>Financial Performance</h3>
+      <p>Includes revenue, expenses, net profit, and growth percentage over time. Best for CFO dashboards.</p>
+      <button>Use Template</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

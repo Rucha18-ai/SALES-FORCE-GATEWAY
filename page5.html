@@ -1,0 +1,287 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Dashboard Settings</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #e0f7fa 0%, #e3f2fd 100%);
+    }
+
+    header {
+      background: linear-gradient(135deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      padding: 24px 40px 18px 40px;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+
+    nav {
+      background: #fff;
+      padding: 14px 40px;
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.04);
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: 600;
+      font-size: 1.08em;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3f2fd;
+      color: #00c853;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 40px auto 0 auto;
+      padding: 32px 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(33,150,243,0.10);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      background: #1976d2;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.05em;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+    }
+    .tab.active, .tab:hover {
+      background: #00c853;
+      color: #fff;
+    }
+
+    .panel {
+      display: none;
+      background: #f9f9f9;
+      padding: 24px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+      margin-bottom: 28px;
+      transition: box-shadow 0.2s;
+    }
+    .panel.active {
+      display: block;
+      box-shadow: 0 6px 24px rgba(33,150,243,0.13);
+    }
+
+    h2 {
+      color: #1976d2;
+      font-size: 1.3em;
+      font-weight: 600;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 7px;
+      border: 1px solid #bdbdbd;
+      margin-bottom: 15px;
+      font-size: 1em;
+      background: #f5fafd;
+      transition: border 0.2s;
+    }
+    input[type="text"]:focus, select:focus, textarea:focus {
+      border: 1.5px solid #1976d2;
+      outline: none;
+    }
+
+    .toggle-group {
+      margin: 10px 0;
+    }
+    .toggle-group label {
+      display: inline;
+      margin-left: 10px;
+      font-weight: normal;
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .feedback-form button, .panel button {
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 1.08em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .feedback-form button:hover, .panel button:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #00c853 100%);
+      box-shadow: 0 4px 16px rgba(33,150,243,0.13);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    ⚙️ Salesforce Custom Dashboard Settings
+  </header>
+
+  <nav>
+    <a href="index.html">Login</a>
+    <a href="page22.html">Dashboard</a>
+    <a href="page3.html">Order Info</a>
+    <a href="page5.html">Custom Settings</a>
+  </nav>
+
+  <div class="container">
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('notifications')">🔔 Notifications</div>
+      <div class="tab" onclick="showTab('kpi')">🎯 KPIs</div>
+      <div class="tab" onclick="showTab('branding')">🧱 Branding</div>
+      <div class="tab" onclick="showTab('ai')">🤖 AI Assistant</div>
+      <div class="tab" onclick="showTab('archive')">🗂 Archives</div>
+      <div class="tab" onclick="showTab('beta')">🧪 Beta Features</div>
+    </div>
+
+    <!-- Notifications Panel -->
+    <div class="panel active" id="notifications">
+      <h2>🔔 Notification Preferences</h2>
+      <div class="section">
+        <label>Receive alerts for:</label>
+        <div class="checkbox-grid">
+          <label><input type="checkbox"> New Order Placed</label>
+          <label><input type="checkbox"> Inventory Below Threshold</label>
+          <label><input type="checkbox"> Dashboard Error</label>
+          <label><input type="checkbox"> Weekly Summary</label>
+        </div>
+        <label>Delivery Method</label>
+        <select>
+          <option>Email</option>
+          <option>SMS</option>
+          <option>In-App</option>
+        </select>
+        <label>Quiet Hours</label>
+        <input type="text" placeholder="e.g. 10 PM to 6 AM">
+      </div>
+    </div>
+
+    <!-- KPI Panel -->
+    <div class="panel" id="kpi">
+      <h2>🎯 KPI Selection</h2>
+      <div class="section">
+        <label>Select KPIs to Show:</label>
+        <div class="checkbox-grid">
+          <label><input type="checkbox" checked> Revenue Growth</label>
+          <label><input type="checkbox"> Customer Retention</label>
+          <label><input type="checkbox" checked> Conversion Rate</label>
+          <label><input type="checkbox"> Average Order Value</label>
+          <label><input type="checkbox"> Fulfillment Time</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Branding Panel -->
+    <div class="panel" id="branding">
+      <h2>🧱 Custom Branding</h2>
+      <div class="section">
+        <label>Upload Logo</label>
+        <input type="file">
+        <label>Primary Color</label>
+        <input type="text" placeholder="#1976d2">
+        <label>Slogan/Tagline</label>
+        <input type="text" placeholder="Empowering your data journey.">
+      </div>
+    </div>
+
+    <!-- AI Panel -->
+    <div class="panel" id="ai">
+      <h2>🤖 AI Insights</h2>
+      <div class="section">
+        <label><input type="checkbox"> Enable AI Smart Summaries</label><br>
+        <label><input type="checkbox"> Detect Anomalies in Sales</label><br>
+        <label><input type="checkbox"> Auto-Recommend Reports</label><br>
+      </div>
+    </div>
+
+    <!-- Archives Panel -->
+    <div class="panel" id="archive">
+      <h2>🗂 Historical Dashboard Archives</h2>
+      <div class="section">
+        <label>Select a Snapshot to View:</label>
+        <select>
+          <option>July 2025 (Current)</option>
+          <option>June 2025</option>
+          <option>May 2025</option>
+        </select>
+        <label><input type="checkbox"> Compare with current</label><br>
+        <label><input type="checkbox"> Restore this snapshot</label>
+      </div>
+    </div>
+
+    <!-- Beta Features Panel -->
+    <div class="panel" id="beta">
+      <h2>🧪 Beta / Experimental Features</h2>
+      <div class="section">
+        <label><input type="checkbox"> Enable Heat Maps</label><br>
+        <label><input type="checkbox"> Enable Predictive Forecast Module</label><br>
+        <label><input type="checkbox"> Show Developer Console</label><br>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      // Remove active class from all tabs
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      // Hide all panels
+      document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active'));
+      // Activate selected
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

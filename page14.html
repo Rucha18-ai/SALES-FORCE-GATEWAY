@@ -1,0 +1,198 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Tracking</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #e0f7fa 0%, #e3f2fd 100%);
+    }
+
+    header {
+      background: linear-gradient(135deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      padding: 24px 40px 18px 40px;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+
+    nav {
+      background: #fff;
+      padding: 14px 40px;
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.04);
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: 600;
+      font-size: 1.08em;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3f2fd;
+      color: #00c853;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto 0 auto;
+      padding: 32px 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(33,150,243,0.10);
+    }
+
+    h2 {
+      color: #1976d2;
+      margin-bottom: 20px;
+    }
+
+    .track-box {
+      background: #f9f9f9;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+    }
+
+    .track-box label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .track-box input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 7px;
+      border: 1px solid #bdbdbd;
+      font-size: 1em;
+      background: #f5fafd;
+      transition: border 0.2s;
+    }
+    .track-box input:focus {
+      border: 1.5px solid #1976d2;
+      outline: none;
+    }
+
+    .track-box button {
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #00c853 0%, #2196f3 100%);
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 1.08em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .track-box button:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #00c853 100%);
+      box-shadow: 0 4px 16px rgba(33,150,243,0.13);
+    }
+
+    .status-box {
+      margin-top: 30px;
+      background: #fff3cd;
+      border-left: 5px solid #1976d2;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+    }
+
+    .status-box h3 {
+      margin-top: 0;
+      color: #1976d2;
+    }
+
+    .progress {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .progress::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      right: 10%;
+      height: 4px;
+      background-color: #cfd8dc;
+      z-index: 0;
+    }
+
+    .step {
+      position: relative;
+      z-index: 1;
+      background: #ffffff;
+      padding: 10px;
+      border-radius: 50%;
+      border: 3px solid #1976d2;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8em;
+      color: #1976d2;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  🚚 Order Tracking
+</header>
+
+<nav>
+  <a href="index.html">Login</a>
+  <a href="page22.html">Dashboard</a>
+  <a href="page3.html">Order Info</a>
+  <a href="page9.html">Products</a>
+  <a href="page14.html">Tracking</a>
+</nav>
+
+<div class="container">
+  <h2>Track Your Order</h2>
+
+  <div class="track-box">
+    <label for="orderId">Enter Order ID</label>
+    <input type="text" id="orderId" placeholder="e.g., ORD123456">
+    <button>Track Order</button>
+  </div>
+
+  <div class="status-box">
+    <h3>Current Status: Shipped</h3>
+    <p>Estimated Delivery: July 5, 2025</p>
+
+    <div class="progress">
+      <div class="step">✓</div>
+      <div class="step">✓</div>
+      <div class="step">🕒</div>
+      <div class="step"> </div>
+    </div>
+    <p style="margin-top: 10px; font-size: 0.9em;">Steps: Order Placed → Packed → Shipped → Delivered</p>
+  </div>
+</div>
+
+</body>
+</html>
